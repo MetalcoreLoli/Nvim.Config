@@ -124,18 +124,19 @@ function! CppClass(name)
     let class  = l:name_as_string . ".cpp"
 
     if isdirectory("headers")
-        execute '!printf "\#pragma once\nclass ' . a:name . '\n{\nprivate:\npublic:\n\t'. a:name .'();\n\t~'.a:name.'();\n};\n' . '" >> ' l:header 
-        execute '!mv '.l:header.' headers/'
+        silent! execute '!printf "\#pragma once\nclass ' . a:name . '\n{\nprivate:\npublic:\n\t'. a:name .'();\n\t~'.a:name.'();\n};\n' . '" >> ' l:header 
+        silent! execute '!mv '.l:header.' headers/'
     else 
-        execute '!printf "\#pragma once\nclass ' . a:name . '\n{\nprivate:\npublic:\n\t'. a:name .'();\n\t~'.a:name.'();\n};\n' . '" >> ' l:header 
+        silent! execute '!printf "\#pragma once\nclass ' . a:name . '\n{\nprivate:\npublic:\n\t'. a:name .'();\n\t~'.a:name.'();\n};\n' . '" >> ' l:header 
     endif
 
     if isdirectory("sources")
-        execute '!printf "\#include \"../headers/' . a:name .'.h\"\n'.a:name.'::'.a:name.'()\n{\n}\n'.a:name.'::~'.a:name.'()\n{\n}\n" >> ' l:class
-        execute '!mv '.l:class.' sources/'
+        silent! execute '!printf "\#include \"../headers/' . a:name .'.h\"\n'.a:name.'::'.a:name.'()\n{\n}\n'.a:name.'::~'.a:name.'()\n{\n}\n" >> ' l:class
+        silent! execute '!mv '.l:class.' sources/'
     else 
-        execute '!printf "\#include \"' . a:name .'.h\"\n'.a:name.'::'.a:name.'()\n{\n}\n'.a:name.'::~'.a:name.'()\n{\n}\n" >> ' l:class
+        silent! execute '!printf "\#include \"' . a:name .'.h\"\n'.a:name.'::'.a:name.'()\n{\n}\n'.a:name.'::~'.a:name.'()\n{\n}\n" >> ' l:class
     endif
+    
 endfunction
 
 function! CppProp(name, type)
@@ -149,10 +150,10 @@ function! CppProp(name, type)
     endif
 
     if l:public
-        call append (l:public, "\tvoid Set".l:goodname."(".a:type. " value) {m_".a:name." = value;}")
-        call append (l:public, "\t".a:type." Get".l:goodname."() const {return m_".a:name.";}")
+        call append (search ('public:', '', 's'), "\tvoid Set".l:goodname."(".a:type. " value) {m_".a:name." = value;}")
+        call append (search ('public:', '', 's'), "\t".a:type." Get".l:goodname."() const {return m_".a:name.";}")
     endif
 endfunction
 
-command! -nargs=1 CppClass call CppClass(<f-args>)
+command! -nargs=1 CppClass call CppClass(<f-args>) 
 command! -nargs=* CppProp call CppProp (<f-args>)
