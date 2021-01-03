@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/daniel/.config/nvim'
+let g:netrw_dirhist_7='/home/daniel/.config/bspwm'
+let g:netrw_dirhist_6='/home/daniel/.config/polybar'
+let g:netrw_dirhist_5='/home/daniel/Project/CSharp/RougeLikeRpg/RougeLikeRpg.Game/Engine/GameMaps'
+let g:netrw_dirhist_4='/home/daniel/Project/CSharp/RougeLikeRpg/RougeLikeRpg.Graphic/Core'
+let g:netrw_dirhist_3='/home/daniel/Project/CSharp/RougeLikeRpg/.git'
+let g:netrw_dirhist_2='/home/daniel/Project/Cpp/loli.Scheme'
 let g:netrw_dirhist_1='/home/daniel/Project/Cpp/sandbox/tictactou'

@@ -152,7 +152,7 @@ function! CppProp(name, type)
 
     if l:public
         call append (search ('public:', '', 's'), "\tvoid Set".l:goodname."(".a:type. " value) {m_".a:name." = value;}")
-        call append (search ('public:', '', 's'), "\t".a:type." Get".l:goodname."() const {return m_".a:name.";}")
+        call append (search ('public:', '', 's'), "\t".a:type." ".l:goodname."() const {return m_".a:name.";}")
     endif
 endfunction
 
@@ -180,3 +180,9 @@ command! -nargs=0 CompileLatexUndShow call CompileLatexUndShow (<f-args>)
                                                                              
 nnoremap <c-n> :CompileLatexUndShow<CR>
 nnoremap <c-x> :CompileLatex<CR>  
+
+" C
+autocmd FileType c nnoremap <F5> :!make build run<CR>
+
+"CSharp
+autocmd FileType cs nnoremap <F5> :!make run<CR>
