@@ -116,8 +116,6 @@ let g:ale_linters = {
     \ 'cs': ['OmniSharp']
     \}
 
-
-
 "" cpp funcs setup
 function! CppClass(name)
     let name_as_string = string(a:name)
@@ -163,6 +161,9 @@ command! -nargs=* CppProp call CppProp (<f-args>)
 let g:latex_compiler    = 'pdflatex'
 let g:pdf_reader        = 'zathura'     
                                        
+"pascal
+let g:pascal_compiler   = 'fpc'
+
 function! CompileLatex()
     let file_name = expand('%:t')
     execute '!' . g:latex_compiler . ' ' . l:file_name
@@ -174,15 +175,26 @@ function! CompileLatexUndShow()
     let words = split(l:file_name, '\.')
     silent! execute '!'. g:pdf_reader .' '. l:words[0] . '.pdf'
 endfunction                                                            
-               
+
+function! CompilePascal()
+    let file_name = expand ('%:t')
+    let words = split (l:file_name. '\.')
+    execute '!' . g:pascal_compiler . ' ' . l:file_name
+endfunction
+
 command! -nargs=0 CompileLatex call CompileLatex (<f-args>)
 command! -nargs=0 CompileLatexUndShow call CompileLatexUndShow (<f-args>)
+
+command! -nargs=0 CompilePascal call CompilePascal (<f-args>)
                                                                              
-nnoremap <c-n> :CompileLatexUndShow<CR>
-nnoremap <c-x> :CompileLatex<CR>  
+autocmd FileType tex nnoremap <C-N> :CompileLatexUndShow<CR>
+autocmd FileType tex nnoremap <C-X> :CompileLatex<CR>  
 
 " C
 autocmd FileType c nnoremap <F5> :!make build run<CR>
 
 "CSharp
 autocmd FileType cs nnoremap <F5> :!make run<CR>
+
+"Pascal 
+autocmd FileType .pas nnoremap <F5> :CompilePascal<CR>
