@@ -13,5 +13,10 @@
     "command": "rust-analyzer",
     "filetypes": ["rust"],
     "rootPatterns": ["Cargo.toml"]
+  },
+    "latex": {
+    "command": "/PATH/TO/texlab",
+    "ignoredRootPaths": ["~"],
+    "filetypes": ["tex", "bib", "plaintex", "context"]
   }
 }
