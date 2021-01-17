@@ -6,7 +6,7 @@ function! CompilePascal()
     execute '!' . g:pascal_compiler . ' ' . l:file_name
 endfunction
 
-command! -nargs=0 CompPascal call CompilePascal(<f-args>)
+command! -nargs=0 CompilePascal call CompilePascal(<f-args>)
  
 " Pascal 
-autocmd FileType pas nnoremap <buffer> <F5> :CompilePascal<CR>
+autocmd FileType pascal nnoremap <buffer> <F5> :CompilePascal<CR>
