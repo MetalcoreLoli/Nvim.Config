@@ -1,0 +1,17 @@
+"languageserver": {
+  "clangd": {
+    "command": "clangd",
+    "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+  },
+  "csharp": {
+    "omnisharp.version": "v1.37.3",
+    "omnisharp.trace.server": "information",
+    "omnisharp.debug.server": true
+  },
+  "rust": {
+    "command": "rust-analyzer",
+    "filetypes": ["rust"],
+    "rootPatterns": ["Cargo.toml"]
+  }
+}
