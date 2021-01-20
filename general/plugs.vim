@@ -9,9 +9,10 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'OmniSharp/omnisharp-vim'
 " Multiple Plug commands can be written in a single line using | separators
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+Plug 'mhinz/vim-startify'
 
 " Using a non-master branch
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }

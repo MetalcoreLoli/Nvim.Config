@@ -1,14 +1,15 @@
-source $HOME/.config/nvim/general/main.vim
-source $HOME/.config/nvim/general/plugs.vim
+so $HOME/.config/nvim/general/setttings.vim
+so $HOME/.config/nvim/general/plugs.vim
 
-source $HOME/.config/nvim/plugs/coc.conf.vim
-source $HOME/.config/nvim/plugs/onmisharp.conf.vim
-source $HOME/.config/nvim/plugs/airlines.conf.vim
-source $HOME/.config/nvim/plugs/nerdtree.conf.vim
+so $HOME/.config/nvim/plugs/coc.vim
+so $HOME/.config/nvim/plugs/omnisharp.vim
+so $HOME/.config/nvim/plugs/airlines.vim
+so $HOME/.config/nvim/plugs/nerdtree.vim
+so $HOME/.config/nvim/plugs/starty.conf.vim
 
-source $HOME/.config/nvim/langs/cpp.vim
-source $HOME/.config/nvim/langs/latex.vim
-source $HOME/.config/nvim/langs/pascal.vim
+so $HOME/.config/nvim/langs/cpp.vim
+so $HOME/.config/nvim/langs/latex.vim
+so $HOME/.config/nvim/langs/pascal.vim
 
 
 silent! colorscheme nord 

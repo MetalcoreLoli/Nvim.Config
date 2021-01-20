@@ -1,3 +1,4 @@
+
 " Encoding
 set encoding=utf-8
 set fileencoding=utf-8
@@ -27,7 +28,6 @@ set ignorecase
 set smartcase
 
 " Disable the blinking cursor.
-set gcr=a:blinkon0
 set scrolloff=3
 
 "" Status bar
@@ -41,7 +41,6 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 
-"" set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 set number
 syntax on
 
@@ -58,4 +57,14 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 
+function! LunchTerm ()
+    silent! execute "below sp"
+    silent! execute "vert term"
+    silent! execute "resize " . (winheight(0) * 2 / 3)
+    silent! execute "resize " . (winheight(0) * 2 / 3)
+endfunction
 
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+nnoremap <silent> <S-Tab> :exe "bn"<CR>
