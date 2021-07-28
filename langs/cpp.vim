@@ -36,10 +36,19 @@ function! CppProp(name, type)
     endif
 endfunction
 
+function! BuildProject()
+    if isdirectory ('build') == 0 
+        silent! execute '!mkdir build'
+    endif
+
+    execute '!cd build && cmake .. && cmake --build .'
+endfunction
+
 command! -nargs=1 CppClass call CppClass(<f-args>) 
 command! -nargs=* CppProp call CppProp (<f-args>)
+command! -nargs=* BuildProject call BuildProject ()
 
 cnoreabbrev cppclass CppClass 
 cnoreabbrev cppprop CppProp
 
-autocmd FileType cpp nnoremap <buffer> <F5> :!make build run<CR>
+autocmd FileType cpp nnoremap <buffer> <F5> :BuildProject <CR>

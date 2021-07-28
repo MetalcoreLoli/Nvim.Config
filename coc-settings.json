@@ -9,6 +9,17 @@
             "command": "/PATH/TO/texlab",
             "ignoredRootPaths": ["~"],
             "filetypes": ["tex", "bib", "plaintex", "context"]
+        },
+	    "cmake": {
+            "command": "cmake-language-server",
+            "filetypes": ["cmake"],
+            "rootPatterns": [
+              "build/"
+            ],
+            "initializationOptions": {
+              "buildDirectory": "build"
+            }
         }
-    }
+    },
+    "clangd.path": "/home/daniel/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
 }
