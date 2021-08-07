@@ -44,11 +44,22 @@ function! BuildProject()
     execute '!cd build && cmake .. && cmake --build .'
 endfunction
 
+function! RunCppTests() 
+   if isdirectory ('build') 
+       execute '!./build/tests/unit-tests'
+   else 
+       BuildProject ()
+       RunCppTests ()
+   endif
+endfunction
+
 command! -nargs=1 CppClass call CppClass(<f-args>) 
 command! -nargs=* CppProp call CppProp (<f-args>)
 command! -nargs=* BuildProject call BuildProject ()
+command! -nargs=* RunCppTests call  RunCppTests()
 
 cnoreabbrev cppclass CppClass 
 cnoreabbrev cppprop CppProp
 
 autocmd FileType cpp nnoremap <buffer> <F5> :BuildProject <CR>
+autocmd FileType cpp nnoremap <buffer> <F11> :RunCppTests <CR>
