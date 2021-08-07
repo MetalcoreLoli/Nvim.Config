@@ -45,12 +45,8 @@ function! BuildProject()
 endfunction
 
 function! RunCppTests() 
-   if isdirectory ('build') 
-       execute '!./build/tests/unit-tests'
-   else 
-       BuildProject ()
-       RunCppTests ()
-   endif
+   BuildProject ()
+   execute '!./build/tests/unit-tests'
 endfunction
 
 command! -nargs=1 CppClass call CppClass(<f-args>) 
