@@ -1,4 +1,6 @@
 "" cpp funcs setup
+let cppCompiler = "g++"
+
 function! CppClass(name)
     let name_as_string = string(a:name)
     let header = l:name_as_string . ".h"
@@ -36,12 +38,26 @@ function! CppProp(name, type)
     endif
 endfunction
 
-function! BuildProject()
+function! CmakeBuild()
     if isdirectory ('build') == 0 
         silent! execute '!mkdir build'
     endif
 
     execute '!cd build && cmake .. && cmake --build .'
+endfunction
+
+function! BuildProject()
+    if filereadable ('CMakeLists.txt') 
+       call CmakeBuild ()
+    else 
+        let compileString = '!'. g:cppCompiler . ' -o app *.cpp'
+        if filereadable ('*.h')
+            execute l:compileString . '*.h'
+        else 
+            execute l:compileString 
+        endif
+    endif
+
 endfunction
 
 function! RunCppTests() 
