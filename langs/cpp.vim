@@ -72,13 +72,27 @@ function! RunCppTests()
     endif
 endfunction
 
+function! RunCppApp ()
+    BuildProject ()
+    if isdirectory ("build/")
+        execute '!./build/app'
+    elseif filereadable ("app")
+        execute '!./app'
+    else 
+        execute 'echo "i do not know there is executable"'
+    endif
+endfunction
+
+
 command! -nargs=1 CppClass call CppClass(<f-args>) 
 command! -nargs=* CppProp call CppProp (<f-args>)
 command! -nargs=* BuildProject call BuildProject ()
 command! -nargs=* RunCppTests call  RunCppTests()
+command! -nargs=* RunCppApp call  RunCppApp()
 
 cnoreabbrev cppclass CppClass 
 cnoreabbrev cppprop CppProp
 
 autocmd FileType cpp nnoremap <buffer> <F5> :BuildProject <CR>
+autocmd FileType cpp nnoremap <buffer> <F6> :RunCppApp<CR>
 autocmd FileType cpp nnoremap <buffer> <F11> :RunCppTests <CR>
