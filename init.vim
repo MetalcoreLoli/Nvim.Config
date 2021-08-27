@@ -10,6 +10,7 @@ so $HOME/.config/nvim/plugs/starty.conf.vim
 so $HOME/.config/nvim/langs/cpp.vim
 so $HOME/.config/nvim/langs/latex.vim
 so $HOME/.config/nvim/langs/pascal.vim
+so $HOME/.config/nvim/langs/lual.vim
 
 
 silent! colorscheme nord 
