@@ -68,8 +68,8 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>t :exe "call LunchTerm()"<CR>
 
 nnoremap <silent> <S-Tab> :exe "bp"<CR>
-
 nnoremap <silent> <Tab> :exe "bn" <CR>
+nnoremap <silent> <Leader>q :exe "bd" <CR>
 
 
 tnoremap <Esc> <C-\><C-n>
