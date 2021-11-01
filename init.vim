@@ -6,6 +6,7 @@ so $HOME/.config/nvim/plugs/omnisharp.vim
 so $HOME/.config/nvim/plugs/airlines.vim
 so $HOME/.config/nvim/plugs/nerdtree.vim
 so $HOME/.config/nvim/plugs/starty.conf.vim
+so $HOME/.config/nvim/plugs/ale.conf.vim
 
 so $HOME/.config/nvim/langs/cpp.vim
 so $HOME/.config/nvim/langs/latex.vim
