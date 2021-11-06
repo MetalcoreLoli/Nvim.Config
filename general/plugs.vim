@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
