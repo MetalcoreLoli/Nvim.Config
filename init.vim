@@ -7,7 +7,7 @@ so $HOME/.config/nvim/plugs/airlines.vim
 so $HOME/.config/nvim/plugs/nerdtree.vim
 so $HOME/.config/nvim/plugs/starty.conf.vim
 so $HOME/.config/nvim/plugs/ale.conf.vim
-so $HOME/.config/nvim/plugs/glua.vim
+so $HOME/.config/nvim/plugs/fzf.conf.vim
 
 so $HOME/.config/nvim/langs/cpp.vim
 so $HOME/.config/nvim/langs/latex.vim
@@ -19,7 +19,7 @@ so $HOME/.config/nvim/langs/lual.vim
 silent! colorscheme nord 
 
 "snippets
-let g:UltiSnipsExpandTrigger="<c-a>"
+let g:UltiSnipsExpandTrigger="<Leader><Tab>"
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
