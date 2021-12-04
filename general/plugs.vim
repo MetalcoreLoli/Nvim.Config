@@ -30,4 +30,11 @@ Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'vim-latex/vim-latex'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Initialize plugin system
+
+" git plugins
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
+
 call plug#end()

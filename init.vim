@@ -8,6 +8,7 @@ so $HOME/.config/nvim/plugs/nerdtree.vim
 so $HOME/.config/nvim/plugs/starty.conf.vim
 so $HOME/.config/nvim/plugs/ale.conf.vim
 so $HOME/.config/nvim/plugs/fzf.conf.vim
+so $HOME/.config/nvim/plugs/signify.conf.vim
 
 so $HOME/.config/nvim/langs/cpp.vim
 so $HOME/.config/nvim/langs/latex.vim
