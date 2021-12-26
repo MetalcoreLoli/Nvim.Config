@@ -63,10 +63,7 @@ endfunction
 function! RunCppTests() 
     BuildProject ()
     if isdirectory("build/tests") 
-        silent! execute '!./build/tests/unit-tests > test-results'
-        sp 
-        e test-results
-        silent! execute '!rm test-results'
+        silent! execute 'tabnew | r!./build/tests/unit-tests'
     else 
         execute 'echo "THERE IS NO TESTS/UNIT-TESTS EXECUTABLE !!!"'
     endif
