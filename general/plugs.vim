@@ -37,4 +37,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
 
+Plug 'easymotion/vim-easymotion'
+
 call plug#end()
