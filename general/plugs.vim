@@ -1,5 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'wlangstroth/vim-racket'
+Plug 'rust-lang/rust.vim'
+
 "Plug 'dense-analysis/ale'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
