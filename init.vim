@@ -15,6 +15,7 @@ so $HOME/.config/nvim/langs/latex.vim
 so $HOME/.config/nvim/langs/pascal.vim
 so $HOME/.config/nvim/langs/python.vim
 so $HOME/.config/nvim/langs/lual.vim
+so $HOME/.config/nvim/langs/cs.vim
 
 
 silent! colorscheme nord 
@@ -29,7 +30,3 @@ nnoremap N Nzzzv
                                     
 " C
 autocmd FileType c nnoremap <buffer> <F5> :!make build run<CR>
-
-"CSharp
-autocmd FileType cs nnoremap <buffer> <F5> :!make run<CR>
-

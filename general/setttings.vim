@@ -45,6 +45,9 @@ set titlestring=%F
 set number
 syntax on
 
+syntax enable
+filetype plugin indent on
+
 "" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
 cnoreabbrev Q! q!

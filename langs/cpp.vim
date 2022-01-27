@@ -71,7 +71,9 @@ endfunction
 
 function! RunCppApp ()
     BuildProject ()
-    if isdirectory ("build/")
+    if isdirectory ("build/app/")
+        execute '!./build/app/app'
+    elseif filereadable ("build/app")
         execute '!./build/app'
     elseif filereadable ("app")
         execute '!./app'
