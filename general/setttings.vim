@@ -76,6 +76,6 @@ nnoremap <silent> <Tab> :exe "bn" <CR>
 nnoremap <silent> <Leader>q :exe "bd" <CR>
 nnoremap <silent> <Leader>qq :exe "bd!" <CR>
 
-
+let g:vimspector_enable_mappings='VISUAL_STUDIO'
 
 tnoremap <Esc> <C-\><C-n>

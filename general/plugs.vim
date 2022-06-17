@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'wlangstroth/vim-racket'
 Plug 'rust-lang/rust.vim'
 
-"Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -29,7 +29,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'kyoz/purify', { 'rtp': 'vim' }
-" Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
 Plug 'vim-latex/vim-latex'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Initialize plugin system
@@ -41,5 +41,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
 
 Plug 'easymotion/vim-easymotion'
+
+Plug 'puremourning/vimspector'
 
 call plug#end()
